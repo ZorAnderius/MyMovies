@@ -1,0 +1,32 @@
+.goBack{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff200;
+    background-color: rgb(116, 115, 115);
+    border-radius: 5px;
+    padding: 5px 10px;
+    max-width: 100px;
+    transition: color, background-color 250ms ease-in;
+}
+
+.goBack:is(:hover, :focus){
+    background-color: grey;
+    color: white;
+}
+
+.goBack svg{
+    animation: moveLeft 5s forwards infinite;
+
+}
+
+@keyframes moveLeft{
+    0%, 100%{
+        transform: translateX(0);
+    }50%{
+        transform: translateX(-10px);
+    }
+}
