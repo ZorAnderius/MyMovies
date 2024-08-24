@@ -1,68 +1,73 @@
-.pagination{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    max-width: 310px;
-    width: 100%;
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  max-width: 310px;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 50px;
 }
 .prevBtn a,
-.nextBtn a{
-    width: 30px;
-    height: 30px;
-    border: 1px solid rgb(162, 162, 162);
-    color: rgb(162, 162, 162);
-    outline: none;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+.nextBtn a {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgb(162, 162, 162);
+  color: rgb(162, 162, 162);
+  outline: none;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-.prevBtn{
-    margin-right: 20px;
+.prevBtn {
+  margin-right: 20px;
 }
 
-.nextBtn{
-    margin-left: 20px;
+.nextBtn {
+  margin-left: 20px;
 }
 
 .prevBtn a:is(:hover, :focus),
-.nextBtn a:is(:hover, :focus){
-    background-color: rgba(60, 60, 255, 0.429);
-    color: white;
-    border-color: rgba(60, 60, 255, 0.129);
+.nextBtn a:is(:hover, :focus) {
+  background-color: rgba(47, 255, 0, 0.67);
+  color: white;
+  border-color: rgba(60, 60, 255, 0.129);
 }
 
-.break{
-    cursor: pointer;
+.break {
+  color: rgba(47, 255, 0, 0.67);
+  font-size: 24px;
+  cursor: pointer;
 }
 
-.item{
-    color: rgb(162, 162, 162);
-    cursor: pointer;
-    font-size: 16px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.item {
+  color: rgb(162, 162, 162);
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.item:is(:hover, :focus){
-    color: black;
+.item:is(:hover, :focus) {
+  color: rgb(47, 255, 0);
 }
 
-.active{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: black;
-    border: none;
-    box-shadow: 0px 0px 6px 1px rgba(137,137,137,0.85) inset;
-            -webkit-box-shadow: 0px 0px 6px 1px rgba(137,137,137,0.85) inset;
-            -moz-box-shadow: 0px 0px 6px 1px rgba(137,137,137,0.85) inset;
-    width: 30px;
-    height: 30px;
-    flex-shrink: 0;
+.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.9);
+  border: none;
+  box-shadow: 0px 0px 6px 1px rgba(13, 255, 0, 0.85) inset;
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(13, 255, 0, 0.85) inset;
+  -moz-box-shadow: 0px 0px 6px 1px rgba(13, 255, 0, 0.85) inset;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
 }

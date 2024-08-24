@@ -1,4 +1,8 @@
 .thumb {
+    position: fixed;
+    top: 30px;
+    right: 10%;
+    z-index:100;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,5 +12,5 @@
     box-shadow: 0 0 5px 5px rgba(128, 248, 36, 0.605);
     width: 300px;
     height: auto;
-    transform: rotateZ(-6deg);
+    transform: rotateZ(6deg);
 }

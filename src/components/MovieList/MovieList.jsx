@@ -5,9 +5,9 @@ import styles from './MovieList.module.css';
 const MovieList = React.memo(({ movies, location }) => {
   return (
     movies?.length > 0 && (
-      <ul>
+      <ul className={styles.moviesContainer}>
         {movies.map((movie) => (
-          <li key={movie.id}>
+          <li key={movie.id} className={styles.movieItem}>
             <MovieCard movie={movie} location={location} />
           </li>
         ))}

@@ -16,16 +16,17 @@ const option = {
   },
 };
 
-export const fetchTrendMovie = async (page=1, controller) => {
-  const { data } = await axios.get(`${URL.trending}?page=${page}`, { ...option, ...controller });
+export const fetchTrendMovie = async (page=1) => {
+  const { data } = await axios.get(`${URL.trending}?page=${page}`, option);
   return data;
 };
 
-export const fetchMovieByName = async movieName => {
+export const fetchMovieByName = async (movieName, page=1) => {
   const { data } = await axios.get(URL.searchByName, {
     ...option,
     params: {
       query: movieName,
+      page,
       include_adult: false
     },
   });
