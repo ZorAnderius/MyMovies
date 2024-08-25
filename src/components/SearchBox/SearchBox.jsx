@@ -1,14 +1,14 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { RiSearch2Line } from "react-icons/ri";
 
 import styles from "./SearchBox.module.css";
 
 const SearchBox = ({ onSubmit, param }) => {
-  const [query, setQuery] = useState(param || '');
+  const [query, setQuery] = useState(param || "");
 
-  const handleChange = ({ target: { value } }) => { 
-    setQuery(value)
-   }
+  const handleChange = ({ target: { value } }) => {
+    setQuery(value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();

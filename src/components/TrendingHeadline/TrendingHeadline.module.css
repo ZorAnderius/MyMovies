@@ -1,15 +1,16 @@
 .thumb {
-    position: sticky;
-    top: 20px;
-    z-index:100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid rgb(0, 49, 20);
-    box-shadow: 0 0 5px 5px rgba(128, 248, 36, 0.605);
-    width: 300px;
-    height: auto;
-    transform: rotateZ(-6deg);
+  position: sticky;
+  top: 20px;
+  margin-top: -40px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgb(0, 49, 20);
+  box-shadow: 0 0 5px 5px rgba(128, 248, 36, 0.605);
+  width: 300px;
+  height: auto;
+  transform: rotateZ(-6deg);
 }

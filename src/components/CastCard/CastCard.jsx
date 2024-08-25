@@ -16,7 +16,7 @@ const CastCard = ({ cast }) => {
       </div>
       <div className={styles.backCastContainer}>
         <p className={styles.popularity}>
-          Popularity: <span>{popularity} %</span>
+          Popularity: <span>{popularity}</span>
         </p>
       </div>
     </>

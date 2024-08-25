@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import styles from './MovieCard.module.css';
-import StarRatings from 'react-star-ratings';
-import { convertMovieDetails } from '../../helpers/convertMovieDetails';
+import { Link } from "react-router-dom";
+import styles from "./MovieCard.module.css";
+import StarRatings from "react-star-ratings";
+import { convertMovieDetails } from "../../helpers/convertMovieDetails";
 
 const MovieCard = ({ movie, location }) => {
   const { id, poster_path, title, vote_average } = convertMovieDetails(movie);
@@ -36,4 +36,4 @@ const MovieCard = ({ movie, location }) => {
   );
 };
 
-export default MovieCard
+export default MovieCard;

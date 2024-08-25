@@ -131,7 +131,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   max-height: 40px;
-  overflow:scroll;
+  overflow: scroll;
   gap: 10px;
 }
 

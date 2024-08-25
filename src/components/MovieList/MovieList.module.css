@@ -14,10 +14,10 @@
   margin-bottom: 30px;
 }
 
-.movieItem{
-    flex-basis: calc((100% - 3 * 20px) / 4);
-    max-height: auto;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
+.movieItem {
+  flex-basis: calc((100% - 3 * 20px) / 4);
+  max-height: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }

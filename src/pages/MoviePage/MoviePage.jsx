@@ -62,23 +62,23 @@ const MoviePage = () => {
   return (
     <>
       <SearchBox onSubmit={onSearch} param={queryTitle} />
-      {
-        isLoad
-          ? <Loader />
-          : (movies.length > 0 &&
-            (<>
-              <MovieList movies={movies} location={location} />
-              {total.current > 1 && (
-                <PaginateMovie
-                  total={total.current}
-                  currentPage={currentPage}
-                  setCurrentPage={handlePage}
-                />
-              )}
-            </>)
-          ) || (query && movies.length === 0 && <NoDataFound query={query} />
-          )
-      }
+      {isLoad ? (
+        <Loader />
+      ) : (
+        (movies.length > 0 && (
+          <>
+            <MovieList movies={movies} location={location} />
+            {total.current > 1 && (
+              <PaginateMovie
+                total={total.current}
+                currentPage={currentPage}
+                setCurrentPage={handlePage}
+              />
+            )}
+          </>
+        )) ||
+        (query && movies.length === 0 && <NoDataFound query={query} />)
+      )}
     </>
   );
 };

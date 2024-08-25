@@ -1,6 +1,6 @@
-import { useLocation } from 'react-router-dom';
-import GoBackBtn from '../../components/GoBackBtn/GoBackBtn';
-import styles from './NotFoundPage.module.css';
+import { useLocation } from "react-router-dom";
+import GoBackBtn from "../../components/GoBackBtn/GoBackBtn";
+import styles from "./NotFoundPage.module.css";
 
 const NotFoundPage = () => {
   const location = useLocation();
@@ -8,8 +8,7 @@ const NotFoundPage = () => {
   const routeBack = location.state?.from?.pathname === "/" ? "Home" : "Movie";
   const routLink = location.state?.from?.pathname === "/" ? "/" : "/movies";
 
-  
-console.log(location);
+  console.log(location);
   return (
     <>
       <GoBackBtn location={routLink}>{routeBack}</GoBackBtn>
@@ -24,6 +23,6 @@ console.log(location);
       </div>
     </>
   );
-}
+};
 
-export default NotFoundPage
+export default NotFoundPage;

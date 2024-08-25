@@ -13,10 +13,9 @@ export const convertCastDetail = ({
   const genderImg = gender === 1 ? womenTemplate : menTemplate;
   return {
     id,
-      name,
+    name,
     character,
     profile_path: profile_path ? imgAPIPath + profile_path : genderImg,
-    popularity:
-      Math.round(popularity),
+    popularity: popularity?.toLocaleString("en-US") || "0",
   };
 };

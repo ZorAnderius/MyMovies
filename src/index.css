@@ -1,5 +1,5 @@
 :root {
-    --background-poster: 'transparent';
+  --background-poster: "transparent";
 }
 
 html,
@@ -10,10 +10,19 @@ body {
 }
 
 body {
-  font-family: 'Patua One', serif;
+  font-family: "Patua One", serif;
   line-height: 1.5;
- background: rgb(0,0,0);
-background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.927671117275035) 20%, rgba(10,10,10,0.896858792345063) 40%, rgba(24,24,24,0.9248699968268558) 60%, rgba(34,34,34,0.9304722377232143) 80%, rgba(0,0,0,1) 100%) no-repeat;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.927671117275035) 20%,
+      rgba(10, 10, 10, 0.896858792345063) 40%,
+      rgba(24, 24, 24, 0.9248699968268558) 60%,
+      rgba(34, 34, 34, 0.9304722377232143) 80%,
+      rgba(0, 0, 0, 1) 100%
+    )
+    no-repeat;
   min-height: 100vh;
   background-attachment: fixed;
 }

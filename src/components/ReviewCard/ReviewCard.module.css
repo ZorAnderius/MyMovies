@@ -1,43 +1,43 @@
-.authorInfoContainer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 18px;
-    font-weight: 600;
-    padding-bottom: 5px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+.authorInfoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.authorImgName{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px
+.authorImgName {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
-.authorAvatarThumb{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    object-fit: cover;
-    object-position: center;
+.authorAvatarThumb {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
 }
 
-.authorReview{
-    font-size: 20px;
-    color: rgba(157, 237, 141, 0.85);
+.authorReview {
+  font-size: 20px;
+  color: rgba(157, 237, 141, 0.85);
 }
 
 .ratingAuthor,
-.createReviewDate{
-    font-size: 16px;
-    color: rgb(181, 178, 178);
-    letter-spacing: -1px;
+.createReviewDate {
+  font-size: 16px;
+  color: rgb(181, 178, 178);
+  letter-spacing: -1px;
 }
 
-.reviewContent{
-    font-size: 18px;
-    color: rgb(207, 230, 232);
+.reviewContent {
+  font-size: 18px;
+  color: rgb(207, 230, 232);
 }

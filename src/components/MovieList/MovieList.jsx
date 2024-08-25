@@ -1,6 +1,6 @@
-import React from 'react';
-import MovieCard from '../MovieCard/MovieCard';
-import styles from './MovieList.module.css';
+import React from "react";
+import MovieCard from "../MovieCard/MovieCard";
+import styles from "./MovieList.module.css";
 
 const MovieList = React.memo(({ movies, location }) => {
   return (
@@ -16,4 +16,4 @@ const MovieList = React.memo(({ movies, location }) => {
   );
 });
 
-export default MovieList
+export default MovieList;

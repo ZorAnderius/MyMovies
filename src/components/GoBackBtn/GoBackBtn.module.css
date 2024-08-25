@@ -1,34 +1,36 @@
-.goBack{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    text-decoration: none;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
-    background-color: rgb(114, 114, 114);
-    border-radius: 5px;
-    padding: 5px 10px;
-    max-width: 100px;
-    margin-bottom: 20px;
-    transition: color, background-color 250ms ease-in;
+.goBack {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+  background-color: rgb(114, 114, 114);
+  border-radius: 5px;
+  padding: 5px 10px;
+  max-width: 100px;
+  margin-bottom: 20px;
+  transition: color, background-color 250ms ease-in;
 }
 
-.goBack:is(:hover, :focus){
-    background-color: rgb(74, 74, 74);
-    color: rgba(20, 254, 20, 0.808);
+.goBack:is(:hover, :focus) {
+  background-color: rgb(74, 74, 74);
+  color: rgba(20, 254, 20, 0.808);
 }
 
-.goBack svg{
-    animation: moveLeft 5s forwards infinite;
-
+.goBack svg {
+  animation: moveLeft 5s forwards infinite;
 }
 
-@keyframes moveLeft{
-    0%, 100%{
-        transform: translateX(0);
-    }50%{
-        transform: translateX(-10px);
-    }
+@keyframes moveLeft {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
 }

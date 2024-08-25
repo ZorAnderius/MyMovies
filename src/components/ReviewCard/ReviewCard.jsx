@@ -2,7 +2,8 @@ import { convertReviewDetail } from "../../helpers/convertReviewDetail";
 import styles from "./ReviewCard.module.css";
 
 const ReviewCard = ({ review }) => {
-  const { author, avatar_path, rating, content, created_at } = convertReviewDetail(review);
+  const { author, avatar_path, rating, content, created_at } =
+    convertReviewDetail(review);
 
   return (
     <>

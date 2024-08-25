@@ -1,5 +1,5 @@
-import styles from './Loader.module.css';
-import { CirclesWithBar } from 'react-loader-spinner';
+import styles from "./Loader.module.css";
+import { CirclesWithBar } from "react-loader-spinner";
 
 const Loader = () => {
   return (
@@ -16,6 +16,6 @@ const Loader = () => {
       visible={true}
     />
   );
-}
+};
 
 export default Loader;

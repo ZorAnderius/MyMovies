@@ -4,7 +4,7 @@ import { convertAmount } from "./convertAmount";
 import { convertMinToHour } from "./convertMinToHour";
 
 export const convertMovieDetails = ({
-    id,
+  id,
   title,
   release_date,
   overview,
@@ -17,8 +17,8 @@ export const convertMovieDetails = ({
   poster_path,
 }) => {
   const date = new Date(release_date);
-    return {
-      id,
+  return {
+    id,
     title,
     year: date.getFullYear(),
     release_date: date?.toLocaleDateString() || "N/A",

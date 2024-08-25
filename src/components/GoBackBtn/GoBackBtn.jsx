@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { TbArrowBigLeftFilled } from "react-icons/tb";
 import styles from "./GoBackBtn.module.css";
 

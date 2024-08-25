@@ -1,5 +1,11 @@
 import clsx from "clsx";
-import { NavLink, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
+import {
+  NavLink,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { fetchMovieById } from "../../API/fetchMovies";
@@ -9,7 +15,8 @@ import Loader from "../../components/Loader/Loader";
 
 import styles from "./MovieDetailsPage.module.css";
 
-const buildClass = ({ isActive }) => clsx(styles.btn, isActive && styles.btnActive);  
+const buildClass = ({ isActive }) =>
+  clsx(styles.btn, isActive && styles.btnActive);
 
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState({});
@@ -27,17 +34,18 @@ const MovieDetailsPage = () => {
         setMovie(data);
       } catch (error) {
         navigate("/error", { replace: true });
-      }finally{
-        setIsLoad(false);}
+      } finally {
+        setIsLoad(false);
+      }
     };
 
     getMovieById();
   }, [movieId]);
 
-  const routeBack = useMemo(()=>locRef.current?.pathname === '/'
-    ? 'Home'
-    : 'Movie')
-  
+  const routeBack = useMemo(() =>
+    locRef.current?.pathname === "/" ? "Home" : "Movie"
+  );
+
   return (
     <div>
       <GoBackBtn location={locRef.current ?? "/movies"}>{routeBack}</GoBackBtn>

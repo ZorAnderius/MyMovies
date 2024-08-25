@@ -1,20 +1,28 @@
-import { Route, Routes } from 'react-router-dom'
-import Container from './components/Container/Container'
-import Navigation from './components/Navigation/Navigation'
-import Section from './components/Section/Section'
-import HomePage from './pages/HomePage/HomePage'
-import MoviePage from './pages/MoviePage/MoviePage'
-import Header from './components/Header/Header'
-import MovieDetailsPage from './pages/MovieDetailsPage/MovieDetailsPage'
-import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
-import MovieCast from './components/MovieCast/MovieCast'
-import MovieReviews from './components/MovieReviews/MovieReviews'
+import { Route, Routes } from "react-router-dom";
 import ScrollToTop from "react-scroll-to-top";
-import { LuArrowBigUp } from 'react-icons/lu';
-import styles from './App.module.css';
+import { LuArrowBigUp } from "react-icons/lu";
+import { lazy, Suspense } from "react";
+
+import Section from "./components/Section/Section";
+import Container from "./components/Container/Container";
+import Loader from "./components/Loader/Loader";
+import Header from "./components/Header/Header";
+import Navigation from "./components/Navigation/Navigation";
+
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const MoviePage = lazy(() => import("./pages/MoviePage/MoviePage"));
+const MovieDetailsPage = lazy(() =>
+  import("./pages/MovieDetailsPage/MovieDetailsPage")
+);
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
+const MovieCast = lazy(() => import("./components/MovieCast/MovieCast"));
+const MovieReviews = lazy(() =>
+  import("./components/MovieReviews/MovieReviews")
+);
+
+import styles from "./App.module.css";
 
 function App() {
-
   return (
     <>
       <Header>
@@ -23,15 +31,17 @@ function App() {
       <main>
         <Section>
           <Container>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/movies" element={<MoviePage />} />
-              <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
-                <Route path="casts" element={<MovieCast />} />
-                <Route path="reviews" element={<MovieReviews />} />
-              </Route>
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
+            <Suspense fallback={<Loader />}>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/movies" element={<MoviePage />} />
+                <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
+                  <Route path="casts" element={<MovieCast />} />
+                  <Route path="reviews" element={<MovieReviews />} />
+                </Route>
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </Suspense>
           </Container>
         </Section>
       </main>
@@ -44,4 +54,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
