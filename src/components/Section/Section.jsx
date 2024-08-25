@@ -2,7 +2,7 @@ import styles from './Section.module.css';
 
 const Section = ({children}) => {
   return (
-      <section>{children}</section>
+      <section className={styles.section}>{children}</section>
   )
 }
 

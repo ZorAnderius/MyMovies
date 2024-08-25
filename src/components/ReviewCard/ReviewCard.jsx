@@ -1,15 +1,26 @@
-import styles from './ReviewCard.module.css';
+import { convertReviewDetail } from "../../helpers/convertReviewDetail";
+import styles from "./ReviewCard.module.css";
 
-const ReviewCard = ({review}) => {
+const ReviewCard = ({ review }) => {
+  const { author, avatar_path, rating, content, created_at } = convertReviewDetail(review);
+
   return (
-    <div>
-      <p>{review.author}</p>
-      <p>{review.author_details.avatar_path}</p>
-      <p>{review.author_details.rating}</p>
-      <p>{review.content.split("<em>").join("").split("</em>")}</p>
-      <p>{review.created_at}</p>
-    </div>
+    <>
+      <div className={styles.authorInfoContainer}>
+        <div className={styles.authorImgName}>
+          <div className={styles.authorAvatarThumb}>
+            <img src={avatar_path} alt={author} />
+          </div>
+          <div className={styles.authorName}>
+            <p className={styles.authorReview}>{author}</p>
+            <p className={styles.ratingAuthor}>{rating} / 10</p>
+          </div>
+        </div>
+        <p className={styles.createReviewDate}>{created_at}</p>
+      </div>
+      <p className={styles.reviewContent}>{content}</p>
+    </>
   );
-}
+};
 
-export default ReviewCard
+export default ReviewCard;

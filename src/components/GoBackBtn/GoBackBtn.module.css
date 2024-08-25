@@ -5,17 +5,19 @@
     justify-content: center;
     gap: 10px;
     text-decoration: none;
-    color: #fff200;
-    background-color: rgb(116, 115, 115);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    background-color: rgb(114, 114, 114);
     border-radius: 5px;
     padding: 5px 10px;
     max-width: 100px;
+    margin-bottom: 20px;
     transition: color, background-color 250ms ease-in;
 }
 
 .goBack:is(:hover, :focus){
-    background-color: grey;
-    color: white;
+    background-color: rgb(74, 74, 74);
+    color: rgba(20, 254, 20, 0.808);
 }
 
 .goBack svg{

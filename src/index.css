@@ -1,3 +1,7 @@
+:root {
+    --background-poster: 'transparent';
+}
+
 html,
 body {
   height: 100%;

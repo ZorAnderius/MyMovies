@@ -1,10 +1,9 @@
-import { useId, useState } from "react";
+import {  useState } from "react";
 import { RiSearch2Line } from "react-icons/ri";
 
 import styles from "./SearchBox.module.css";
 
 const SearchBox = ({ onSubmit, param }) => {
-  const searchId = useId();
   const [query, setQuery] = useState(param || '');
 
   const handleChange = ({ target: { value } }) => { 
@@ -21,16 +20,17 @@ const SearchBox = ({ onSubmit, param }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor={searchId}>Movie title: </label>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <input
-        id={searchId}
+        className={styles.input}
         type="text"
         name="movieTitle"
+        placeholder="Search movie ..."
+        autoComplete="off"
         value={query}
         onChange={handleChange}
       />
-      <button type="submit">
+      <button type="submit" className={styles.btnSubmit}>
         <RiSearch2Line />
       </button>
     </form>
