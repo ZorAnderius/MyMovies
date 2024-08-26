@@ -1,11 +1,11 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { fetchMovieById } from "../../API/fetchMovies";
-import CastCard from "../CastCard/CastCard";
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { fetchMovieById } from '../../API/fetchMovies';
+import CastCard from '../CastCard/CastCard';
 
-import styles from "./MovieCast.module.css";
-import LoaderDetails from "../LoaderDetails/LoaderDetails";
-import NoDataFound from "../NoDataFound/NoDataFound";
+import styles from './MovieCast.module.css';
+import LoaderDetails from '../LoaderDetails/LoaderDetails';
+import NoDataFound from '../NoDataFound/NoDataFound';
 
 const MovieCast = () => {
   const [casts, setCasts] = useState(null);
@@ -16,7 +16,7 @@ const MovieCast = () => {
     const getCastInfo = async () => {
       try {
         setIsLoad(true);
-        const data = await fetchMovieById(movieId, "credits");
+        const data = await fetchMovieById(movieId, 'credits');
         setCasts(data.cast);
       } catch (error) {
         console.log(error);
@@ -26,7 +26,7 @@ const MovieCast = () => {
     };
 
     getCastInfo();
-  }, []);
+  }, [movieId]);
 
   return (
     <>
@@ -34,7 +34,7 @@ const MovieCast = () => {
         <LoaderDetails />
       ) : casts?.length > 0 ? (
         <ul className={styles.castsList}>
-          {casts.map((cast) => (
+          {casts.map(cast => (
             <li key={cast.id} className={styles.castItem}>
               <CastCard cast={cast} />
             </li>

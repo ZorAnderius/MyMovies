@@ -8,7 +8,6 @@ const NotFoundPage = () => {
   const routeBack = location.state?.from?.pathname === "/" ? "Home" : "Movie";
   const routLink = location.state?.from?.pathname === "/" ? "/" : "/movies";
 
-  console.log(location);
   return (
     <>
       <GoBackBtn location={routLink}>{routeBack}</GoBackBtn>
