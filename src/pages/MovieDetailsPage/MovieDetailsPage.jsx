@@ -1,19 +1,21 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 import {
   NavLink,
   Outlet,
   useLocation,
   useNavigate,
   useParams,
-} from "react-router-dom";
-import { useEffect, useMemo, useRef, useState } from "react";
+} from 'react-router-dom';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import {Suspense} from 'react';
 
-import { fetchMovieById } from "../../API/fetchMovies";
-import GoBackBtn from "../../components/GoBackBtn/GoBackBtn";
-import MovieDetailsCard from "../../components/MovieDetailsCard/MovieDetailsCard";
-import Loader from "../../components/Loader/Loader";
+import { fetchMovieById } from '../../API/fetchMovies';
+import GoBackBtn from '../../components/GoBackBtn/GoBackBtn';
+import MovieDetailsCard from '../../components/MovieDetailsCard/MovieDetailsCard';
+import Loader from '../../components/Loader/Loader';
+import LoaderDetails from '../../components/LoaderDetails/LoaderDetails';
 
-import styles from "./MovieDetailsPage.module.css";
+import styles from './MovieDetailsPage.module.css';
 
 const buildClass = ({ isActive }) =>
   clsx(styles.btn, isActive && styles.btnActive);
@@ -33,7 +35,7 @@ const MovieDetailsPage = () => {
         const data = await fetchMovieById(movieId);
         setMovie(data);
       } catch (error) {
-        navigate("/error", { replace: true });
+        navigate('/error', { replace: true });
       } finally {
         setIsLoad(false);
       }
@@ -43,12 +45,12 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   const routeBack = useMemo(() =>
-    locRef.current?.pathname === "/" ? "Home" : "Movie"
+    locRef.current?.pathname === '/' ? 'Home' : 'Movie'
   );
 
   return (
     <div>
-      <GoBackBtn location={locRef.current ?? "/movies"}>{routeBack}</GoBackBtn>
+      <GoBackBtn location={locRef.current ?? '/movies'}>{routeBack}</GoBackBtn>
       {isLoad ? (
         <Loader />
       ) : (
@@ -62,7 +64,9 @@ const MovieDetailsPage = () => {
               Reviews
             </NavLink>
           </div>
-          <Outlet />
+          <Suspense fallback={<LoaderDetails />}>
+            <Outlet />
+          </Suspense>
         </>
       )}
     </div>

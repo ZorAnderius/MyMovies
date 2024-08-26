@@ -1,16 +1,20 @@
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+
 import { fetchMovieById } from '../../API/fetchMovies';
 import CastCard from '../CastCard/CastCard';
-
-import styles from './MovieCast.module.css';
 import LoaderDetails from '../LoaderDetails/LoaderDetails';
 import NoDataFound from '../NoDataFound/NoDataFound';
+
+import styles from './MovieCast.module.css';
 
 const MovieCast = () => {
   const [casts, setCasts] = useState(null);
   const [isLoad, setIsLoad] = useState(false);
   const { movieId } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const locRef = useRef(location.state);
 
   useEffect(() => {
     const getCastInfo = async () => {
@@ -19,7 +23,7 @@ const MovieCast = () => {
         const data = await fetchMovieById(movieId, 'credits');
         setCasts(data.cast);
       } catch (error) {
-        console.log(error);
+        navigate('/error', { replace: true, state: { from: locRef.current } });
       } finally {
         setIsLoad(false);
       }
